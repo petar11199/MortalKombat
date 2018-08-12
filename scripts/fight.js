@@ -107,18 +107,18 @@ function hit(strenght, whoPlays, mssg) {
     }, 1500);
     if (whoPlays === 'Human') {
         if (strenght === 10 || strenght === 20) {
-            player.src = '../images/fighters/subzero/reg-attack.gif';
+            player.src = './images/fighters/subzero/reg-attack.gif';
             setTimeout(() => {
-                player.src = '../images/fighters/subzero/stance.gif';
+                player.src = './images/fighters/subzero/stance.gif';
             }, 810);
         } else {
-            player.src = '../images/fighters/subzero/super-attack.gif';
+            player.src = './images/fighters/subzero/super-attack.gif';
             setTimeout(() => {
-                player.src = '../images/fighters/subzero/stance.gif';
+                player.src = './images/fighters/subzero/stance.gif';
             }, 860);
         }
     
-        var hitSound = new Audio('../audio/sub-reg-attack.mp3');
+        var hitSound = new Audio('./audio/sub-reg-attack.mp3');
         hitSound.play();
         hitSound.volume = 0.4;
     
@@ -135,13 +135,13 @@ function hit(strenght, whoPlays, mssg) {
             }, 1000); // Time when bot start spinning after player 
         }
     } else if (whoPlays === 'Bot') {
-        bot.src = '../images/fighters/scorpion/reg-attack.gif';
+        bot.src = './images/fighters/scorpion/reg-attack.gif';
         setTimeout(() => {
-            bot.src = '../images/fighters/scorpion/stance.gif';
+            bot.src = './images/fighters/scorpion/stance.gif';
             bot.style.marginBottom = 0;
         }, 600);
 
-        var hitSound = new Audio('../audio/sub-reg-attack.mp3');
+        var hitSound = new Audio('./audio/sub-reg-attack.mp3');
         hitSound.play();
         hitSound.volume = 0.4;
     
@@ -205,11 +205,11 @@ function endGame(msg) {
 
     if (msg === 'Bot Wins') {
         playerHealthBar.style.width = 0 + '%';
-        var hitSound = new Audio('../audio/scorpion-wins.mp3');
+        var hitSound = new Audio('./audio/scorpion-wins.mp3');
         hitSound.play();
     } else {
         botHealthBar.style.width = 0 + '%';
-        var hitSound = new Audio('../audio/sub-wins.mp3');
+        var hitSound = new Audio('./audio/sub-wins.mp3');
         hitSound.play();
     }
     winMsg.innerHTML = msg;
@@ -220,7 +220,7 @@ function endGame(msg) {
 window.addEventListener("load", () => {
     const fightSign = document.querySelector('.fightSign');
 
-    var audio = new Audio('../audio/roundone-fight.mp3');
+    var audio = new Audio('./audio/roundone-fight.mp3');
     audio.play();
 
     btn.disabled = true;
@@ -232,7 +232,7 @@ window.addEventListener("load", () => {
         fightSign.classList.add('fade');
         spinner.classList.add('fade');
 
-        var arenaAudio = new Audio('../audio/arena-bg.mp3');
+        var arenaAudio = new Audio('./audio/arena-bg.mp3');
         arenaAudio.play();
         arenaAudio.volume = 0.3;
         arenaAudio.loop = true;
