@@ -4,11 +4,11 @@ const remove = document.querySelector('.remove');
 const mute = document.querySelector('.mute');
 const button = document.querySelectorAll('button');
 
-var audio = new Audio('../audio/main-menu-sound.mp3');
+var audio = new Audio('./audio/main-menu-sound.mp3');
 
 button.forEach(btn => {
     btn.addEventListener('mouseenter', () => {
-        var audio = new Audio('../audio/main-menu-hover.mp3');
+        var audio = new Audio('./audio/main-menu-hover.mp3');
         audio.play();
     })
 })
