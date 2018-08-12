@@ -9,7 +9,7 @@ button.forEach(btn => {
     btn.addEventListener('mouseenter', () => {
         var audio = new Audio('./audio/main-menu-hover.mp3');
         audio.play().then(() => {
-            console.log('ide');
+            
         });
     })
 })
