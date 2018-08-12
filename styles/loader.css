@@ -1,0 +1,36 @@
+.loader {
+    color: white;
+    font-family: mk-font;
+    font-size: 40px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.rotate {
+    display: inline-block;
+    animation: rotation 2s infinite linear;
+    transform-origin: 50% 40%;
+}
+
+.loader-finished {
+    animation: loaderOpacity 1s ease forwards;
+}
+
+@keyframes rotation {
+    from {
+            transform: rotate(0deg);
+    }
+    to {
+            transform: rotate(359deg);
+    }
+}
+
+@keyframes loaderOpacity {
+    from {
+            opacity: 1;
+    }
+    to {
+            opacity: 0;
+    }
+}

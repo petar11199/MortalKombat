@@ -1,0 +1,238 @@
+@font-face {
+    font-family: mk-font;
+    src: url('../fonts/mk-font.ttf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: black;
+}
+
+button {
+    border: none;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    background: none;
+    color: white;
+    padding: 20px;
+    font-family: mk-font;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 400ms ease-in-out;
+}
+button:hover {
+    opacity: 0.7;
+}
+button:disabled {
+    opacity: 0.4;
+    transition: 400ms ease-in-out;
+}
+button:focus {
+    outline: none;
+}
+
+.player {
+    height: 375px;
+    width: 255px;
+}
+
+.bot {
+    width: 263px;
+    height: 375px;
+}
+.wrapper {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/backgrounds/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: none;
+}
+
+.health-container {
+    width: 100%;
+    height: 20%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: mk-font;
+    font-size: 60px;
+    animation: fromTop 1s ease;
+}
+.fight-container {
+    width: 100%;
+    display: flex;
+    height: 70%;
+    justify-content: space-around;
+    align-items: flex-end;
+    position: relative;
+}
+.actions-container {
+    width: 100%;
+    display: flex;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    animation: fromBottom 1s ease;
+}
+
+.health-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.health-bar {
+    width: 400px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.185);
+    margin: 0 50px;
+    position: relative;
+}
+.player-health {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    height: 100%;
+    background: white;
+    transition: 400ms ease-in-out;
+}
+.bot-health {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    background: white;
+    transition: 400ms ease-in-out;
+}
+
+.msg {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: mk-font;
+    font-size: 70px;
+}
+
+.bot {
+    transform: scaleX(-1);
+}
+
+.loaded {
+    display: block;
+}
+
+.fightSign {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.fightSign img {
+    width: 500px;
+}
+.fightSign.fade {
+    animation: fade 2s ease forwards;
+}
+
+.spinner {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: gray;
+    height: 200px;
+    overflow: hidden;
+    opacity: 0;
+    border: 2px solid white;
+    display: none;
+}
+
+.spinner.fade {
+    animation: fadeReverse 2s 500ms ease forwards;
+}
+  
+.spinner-inner {
+    transition: 3s ease-in-out;
+    width: 5000px;
+}
+.spinner:after {
+    position: absolute;
+    content: '';
+    top: -10px;
+    left: 48%;
+    background: white;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+}
+.spinner::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '@';
+    font-family: mk-font;
+    font-size: 80px;
+}
+  
+.item {
+    float: left;
+    width: 100px;
+    height: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+  
+.item1 {
+    background-image: url('../images/spinner-icons/item1.png');
+}
+.item2 {
+    background-image: url('../images/spinner-icons/item2.png');
+}
+.item3 {
+    background-image: url('../images/spinner-icons/item3.png');
+}
+.item4 {
+    background-image: url('../images/spinner-icons/item4.png');
+}
+.item5 {
+    background-image: url('../images/spinner-icons/item5.png');
+}
+.item6 {
+    background-image: url('../images/spinner-icons/item6.png');
+}
+
+@keyframes fromTop {
+    from {transform: translateY(-300px)}
+    to  {transform: translateY(0)}
+}
+
+@keyframes fromBottom {
+    from {transform: translateY(300px)}
+    to  {transform: translateY(0)}
+}
+
+@keyframes fade {
+    from {opacity: 1;}
+    to  {opacity: 0; visibility: hidden}
+}
+
+@keyframes fadeReverse {
+    from {opacity: 0;}
+    to  {opacity: 0.8;}
+}
+
