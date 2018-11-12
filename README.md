@@ -7,3 +7,4 @@ Buggs:
 - Sound may not start sometimes
 - Sound may be off
 - Not optimized for smaller devices
+- Typo in 'Buggs'
