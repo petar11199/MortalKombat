@@ -1,4 +1,5 @@
-Work in progress.
+Unfinished.
+NOT WORKING ON MOBILE, and probably never will.
 
 This is a small Java Script game with Mortal Kombat design.
 
